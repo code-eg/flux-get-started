@@ -25,16 +25,15 @@ spec:
         memory: 32Mi
         cpu: 10m
     service:
-      type: ClusterIP
-      port: 8080
+      type: LoadBalancer
     mariadb:
       master:
         persistence:
           enabled: false
-    ingress:
-      ## Set to true to enable ingress record generation
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: alb
-        alb.ingress.kubernetes.io/scheme: internet-facing
-        alb.ingress.kubernetes.io/target-type: ip
+    # ingress:
+    #   ## Set to true to enable ingress record generation
+    #   enabled: true
+    #   annotations:
+    #     kubernetes.io/ingress.class: alb
+    #     alb.ingress.kubernetes.io/scheme: internet-facing
+    #     alb.ingress.kubernetes.io/target-type: ip
