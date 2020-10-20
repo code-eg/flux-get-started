@@ -13,9 +13,9 @@ metadata:
 spec:
   releaseName: aws-alb-ingress-controller
   chart:
-    repository: http://storage.googleapis.com/kubernetes-charts-incubator
+    repository: https://storage.googleapis.com/kubernetes-charts-incubator
     name: aws-alb-ingress-controller
-    # version: 10.3.1
+    version: 0.1.11
   values:
     autoDiscoverAwsRegion: true
     autoDiscoverAwsVpcID: true
