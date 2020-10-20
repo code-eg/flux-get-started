@@ -1,0 +1,6 @@
+rsion: v1
+kind: Namespace
+metadata:
+  labels:
+    name: aws-alb-ingress-controller
+  name: aws-alb-ingress-controller

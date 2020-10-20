@@ -1,0 +1,22 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: aws-alb-ingress-controller
+  namespace: aws-alb-ingress-controller
+  # annotations:
+  #   fluxcd.io/automated: "true"
+  #   fluxcd.io/tag.chart-image: semver:~5.0
+  #   fluxcd.io/locked: "true"
+  #   fluxcd.io/locked_msg: "Halt updates for now"
+  #   fluxcd.io/locked_user: "Stefan Prodan <stefan@weave.works>"
+spec:
+  releaseName: aws-alb-ingress-controller
+  chart:
+    repository: http://storage.googleapis.com/kubernetes-charts-incubator
+    name: aws-alb-ingress-controller
+    # version: 10.3.1
+  values:
+    autoDiscoverAwsRegion: true
+    autoDiscoverAwsVpcID: true
+    clusterName: eks-sdbx
