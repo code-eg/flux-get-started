@@ -10,7 +10,6 @@ spec:
     repository: https://charts.bitnami.com/bitnami
     name: bitnami/apache
     version: 7.4.0
-
   values:
     usePassword: true
     image:
