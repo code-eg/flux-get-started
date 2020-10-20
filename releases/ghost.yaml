@@ -24,7 +24,7 @@ spec:
         memory: 32Mi
         cpu: 10m
     service:
-      type: LoadBalancer
+      type: ClusterIP
     mariadb:
       master:
         persistence:
