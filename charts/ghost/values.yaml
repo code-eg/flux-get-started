@@ -56,7 +56,7 @@ volumePermissions:
 ##
 ghostProtocol: http
 # ghostHost:
-# ghostPort:
+ghostPort: 8080
 ghostPath: /
 
 ## User of the application
