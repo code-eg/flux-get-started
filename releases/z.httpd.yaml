@@ -11,7 +11,7 @@ metadata:
     fluxcd.io/locked_msg: "Halt updates for now"
     fluxcd.io/locked_user: "Stefan Prodan <stefan@weave.works>"
 spec:
-  releaseName: redis
+  releaseName: httpd
   chart:
     repository: https://charts.bitnami.com/bitnami
     name: bitnami/apache
