@@ -1,0 +1,33 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: redis
+  namespace: demo
+  annotations:
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.chart-image: semver:~5.0
+    fluxcd.io/locked: "true"
+    fluxcd.io/locked_msg: "Halt updates for now"
+    fluxcd.io/locked_user: "Stefan Prodan <stefan@weave.works>"
+spec:
+  releaseName: redis
+  chart:
+    repository: https://charts.bitnami.com/bitnami
+    name: bitnami/apache
+    version: 7.4.0
+
+  values:
+    usePassword: true
+    image:
+      repository: bitnami/apache
+      tag: latest
+    service:
+      type: ClusterIP
+    ingress:
+      ## Set to true to enable ingress record generation
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: alb
+        alb.ingress.kubernetes.io/scheme: internet-facing
+        alb.ingress.kubernetes.io/target-type: ip
